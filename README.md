@@ -71,13 +71,20 @@ jsonCopy{
 Response:
 jsonCopy{
   "id": 1,
-  "name": "Implement login feature",
-  "description": "Create a login form with email and password fields",
-  "created_at": "2025-03-24T10:00:00Z",
+  "name": "Implement Authentication",
+  "description": "Add JWT authentication to the API",
+  "created_at": "2025-03-24T12:00:00Z",
   "completed_at": null,
   "task_type": "feature",
   "status": "pending",
-  "assigned_to": []
+  "assigned_users": [
+      {
+          "id": 1,
+          "name": "John Doe",
+          "email": "john@example.com",
+          "mobile": "1234567890"
+      }
+  ]
 }
 2. Assign a Task to Users
 Endpoint: POST /api/tasks/assign/
@@ -89,13 +96,20 @@ jsonCopy{
 Response:
 jsonCopy{
   "id": 1,
-  "name": "Implement login feature",
-  "description": "Create a login form with email and password fields",
-  "created_at": "2025-03-24T10:00:00Z",
+  "name": "Implement Authentication",
+  "description": "Add JWT authentication to the API",
+  "created_at": "2025-03-24T12:00:00Z",
   "completed_at": null,
   "task_type": "feature",
   "status": "pending",
-  "assigned_to": [1, 2]
+  "assigned_users": [
+      {
+          "id": 1,
+          "name": "John Doe",
+          "email": "john@example.com",
+          "mobile": "1234567890"
+      }
+  ]
 }
 3. Get Tasks for a Specific User
 Endpoint: GET /api/users/{user_id}/tasks/
@@ -103,14 +117,21 @@ Response:
 jsonCopy[
   {
     "id": 1,
-    "name": "Implement login feature",
-    "description": "Create a login form with email and password fields",
-    "created_at": "2025-03-24T10:00:00Z",
+    "name": "Implement Authentication",
+    "description": "Add JWT authentication to the API",
+    "created_at": "2025-03-24T12:00:00Z",
     "completed_at": null,
     "task_type": "feature",
     "status": "pending",
-    "assigned_to": [1, 2]
-  }
+    "assigned_users": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "john@example.com",
+            "mobile": "1234567890"
+        }
+    ]
+    }
 ]
 Test Data
 You can create test users through the Django admin interface or by using the following management command:
